@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Declarations and Definitions &mdash; LegalSS 0.9 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Examples in L4 and the concepts and keywords introduced in each example" href="legalss-examples.html" />
+    <link rel="prev" title="Setting up the LegalSS Google Sheet" href="legalss-setup.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> LegalSS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="legalss-executiveSummary.html">What is L4 Good For?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="legalss-setup.html">Setting up the LegalSS Google Sheet</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Declarations and Definitions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#declare-and-define-for-data-types-and-values-and-has-attributes">DECLARE and DEFINE, for data types and values, and HAS-Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#by-and-within-for-temporal-constraints-such-as-deadlines">BY and WITHIN for Temporal Constraints such as Deadlines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#must-shant-and-may-for-obligations-and-permissions">MUST, SHANT, and MAY for obligations and permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fulfilled-and-breach-for-consequences-in-l4">FULFILLED and BREACH for consequences in L4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hence-and-lest-for-regulative-rules-and-connecting-blocks-of-code">HENCE and LEST for regulative rules and connecting blocks of code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-semantics-of-rules">The Semantics of rules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="legalss-examples.html">Examples in L4 and the concepts and keywords introduced in each example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="legalss-documentationFutureWork.html">Work in Progress</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LegalSS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Declarations and Definitions</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/docs/legalss-definitionsAndDeclarations.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="declarations-and-definitions">
+<h1>Declarations and Definitions<a class="headerlink" href="#declarations-and-definitions" title="Permalink to this heading"></a></h1>
+<p>This chapter introduces a handful of keywords.</p>
+<section id="declare-and-define-for-data-types-and-values-and-has-attributes">
+<h2>DECLARE and DEFINE, for data types and values, and HAS-Attributes<a class="headerlink" href="#declare-and-define-for-data-types-and-values-and-has-attributes" title="Permalink to this heading"></a></h2>
+<p>DECLARE and DEFINE have to do with data types and values.</p>
+<p>If you are familiar with Object-Oriented Programming (from languages like Python, Java, C++, or Javascript) you will find the DECLARE and DEFINE concepts familiar.</p>
+<p>We use DECLARE to set up our classes, our records, our types, our schemas, our ontology, our templates.</p>
+<p>We use DEFINE to instantiate those templates with concrete values: the specific variables of a particular agreement.</p>
+<p>These declarations and definitions are automatically exported to the programming language of your choice, lessening the burden of programming downstream. Some call this “”model-driven engineering””; others, “”low-code”.</p>
+<p>Consider the following code</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Type</span> <span class="n">Declaration</span>                            <span class="p">:</span><span class="o">:=</span>             <span class="n">DECLARE</span>                         <span class="n">MultiTerm</span>                           <span class="p">[</span><span class="n">Type</span> <span class="n">Signature</span> <span class="p">]</span>
+                                                <span class="p">[</span><span class="n">Has</span><span class="o">-</span><span class="n">Attribute</span>      <span class="p">]</span>
+                                                <span class="p">[</span>   <span class="o">...</span>             <span class="p">]</span>
+
+<span class="n">Has</span><span class="o">-</span><span class="n">Attribute</span>                               <span class="p">:</span><span class="o">:=</span>             <span class="n">HAS</span>                             <span class="n">MultiTerm</span>                           <span class="p">[</span><span class="n">Type</span> <span class="n">Signature</span>     <span class="p">]</span>
+                                                <span class="p">[</span>   <span class="o">...</span>             <span class="p">]</span>
+                                                <span class="p">[</span><span class="n">Has</span><span class="o">-</span><span class="n">Attribute</span>      <span class="p">]</span>
+</pre></div>
+</div>
+<p>This syntax rule means you can have multiple HAS-Attributes, listed on subsequent lines. For convenience, only the first HAS keyword is necessary; subsequent lines don’t need it.</p>
+<p>HAS-Attributes can nest, such that one record declaration can contain another.
+For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Variable</span> <span class="n">Definition</span>                         <span class="p">:</span><span class="o">:=</span>             <span class="n">DEFINE</span>                          <span class="n">Value</span> <span class="n">Term</span>                      <span class="p">[</span><span class="n">Type</span> <span class="n">Signature</span> <span class="p">]</span>               <span class="o">//</span>      <span class="n">class</span><span class="o">-</span><span class="nb">object</span> <span class="n">instantiation</span>
+                                                            <span class="n">HAS</span>                             <span class="n">MultiTerm</span>                       <span class="p">[</span><span class="n">Type</span> <span class="n">Signature</span> <span class="p">]</span>
+                                                                                            <span class="p">[</span> <span class="o">...</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>Variable definitions with the DEFINE keyword follow the same format as DECLARE.</p>
+<p>We’ll talk more about the elementary data-types of L4 later: sum types, product types, lists, and dictionaries. We’ll also talk about type inference and type checking.</p>
+</section>
+<section id="by-and-within-for-temporal-constraints-such-as-deadlines">
+<h2>BY and WITHIN for Temporal Constraints such as Deadlines<a class="headerlink" href="#by-and-within-for-temporal-constraints-such-as-deadlines" title="Permalink to this heading"></a></h2>
+<p>The BY and WITHIN keywords set deadlines</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Temporal</span> <span class="n">Constraint</span>                         <span class="p">:</span><span class="o">:=</span>     <span class="p">(</span><span class="n">BEFORE</span> <span class="o">|</span> <span class="n">AFTER</span> <span class="o">|</span> <span class="n">BY</span> <span class="o">|</span> <span class="n">WITHIN</span> <span class="o">|</span> <span class="n">UNTIL</span><span class="p">)</span>  <span class="n">Temporal</span> <span class="n">Spec</span>
+</pre></div>
+</div>
+<p>A regulative rule without a temporal constraint is incomplete. L4 substitutes “EVENTUALLY” but will issue a warning so you are conscious that a deadline is missing.</p>
+</section>
+<section id="must-shant-and-may-for-obligations-and-permissions">
+<h2>MUST, SHANT, and MAY for obligations and permissions<a class="headerlink" href="#must-shant-and-may-for-obligations-and-permissions" title="Permalink to this heading"></a></h2>
+<p>Laws and contracts impose <em>obligations</em> and <em>prohibitions</em> on persons, and grant <em>permissions</em>. These ideas are central to <em>deontic logic</em>, and underlie L4’s keywords MUST, SHANT, and MAY, respectively.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Deontic</span> <span class="n">Keyword</span>                             <span class="p">:</span><span class="o">:=</span>     <span class="p">(</span><span class="n">MUST</span> <span class="o">|</span> <span class="n">MAY</span> <span class="o">|</span> <span class="n">SHANT</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Within the context of a single rule, these deontic keywords specify different consequences for the satisfaction or violation of the rule.</p>
+</section>
+<section id="fulfilled-and-breach-for-consequences-in-l4">
+<h2>FULFILLED and BREACH for consequences in L4<a class="headerlink" href="#fulfilled-and-breach-for-consequences-in-l4" title="Permalink to this heading"></a></h2>
+<p>The two fundamental consequences in L4 are FULFILLED and BREACH.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>            <span class="n">If</span> <span class="n">the</span> <span class="n">actor</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">perform</span> <span class="n">the</span> <span class="n">action</span> <span class="n">by</span> <span class="n">the</span> <span class="n">deadline</span>            <span class="n">If</span> <span class="n">the</span> <span class="n">actor</span> <span class="n">performs</span> <span class="n">the</span> <span class="n">action</span> <span class="n">by</span> <span class="n">the</span> <span class="n">deadline</span>
+<span class="n">MUST</span>                <span class="n">BREACHED</span>                                                                                <span class="n">FULFILLED</span>
+<span class="n">SHANT</span>               <span class="n">FULFILLED</span>                                                                               <span class="n">BREACHED</span>
+<span class="n">MAY</span>                 <span class="n">FULFILLED</span>                                                                               <span class="n">FULFILLED</span>
+</pre></div>
+</div>
+<p>We observe that a MAY rule is permissive: if you do it, fine! If you don’t, fine!</p>
+<p>L4’s workflow diagrams follow a convention: a rule that is satisfied proceeds to the bottom right, while a rule that is violated proceeds to the bottom left. The “”happy path”” therefore runs along the right side of a diagram.</p>
+<p>A MAY rule shows action to the right, and inaction to the left.</p>
+</section>
+<section id="hence-and-lest-for-regulative-rules-and-connecting-blocks-of-code">
+<h2>HENCE and LEST for regulative rules and connecting blocks of code<a class="headerlink" href="#hence-and-lest-for-regulative-rules-and-connecting-blocks-of-code" title="Permalink to this heading"></a></h2>
+<p>Ordinary programming languages use the IF … THEN … ELSE construct to connect blocks of code, based on whether the conditions in the IF were met.</p>
+<p>L4 uses HENCE instead of THEN, and LEST instead of ELSE, to connect regulative rules, based on whether the preceding rule was satisfied.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Regulative</span> <span class="n">Connector</span>                                <span class="p">:</span><span class="o">:=</span>     <span class="p">(</span><span class="n">HENCE</span> <span class="o">|</span> <span class="n">LEST</span><span class="p">)</span>
+                                                        <span class="n">Rule</span> <span class="n">Label</span> <span class="o">|</span> <span class="n">Regulative</span> <span class="n">Rule</span>
+</pre></div>
+</div>
+<p>Individual regulative rules connect with one another to form a graph, or a flowchart, describing a workflow.</p>
+</section>
+<section id="the-semantics-of-rules">
+<h2>The Semantics of rules<a class="headerlink" href="#the-semantics-of-rules" title="Permalink to this heading"></a></h2>
+<p>What are the semantics of a rule?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Attribute</span> <span class="n">Constraint</span>   <span class="p">]</span>
+<span class="p">[</span><span class="n">Conditional</span> <span class="n">Constraint</span> <span class="p">]</span>
+<span class="p">[</span><span class="n">Upon</span> <span class="n">Trigger</span>           <span class="p">]</span>
+<span class="p">[</span><span class="n">HENCE</span>                              <span class="n">Rule</span> <span class="n">Label</span> <span class="o">|</span> <span class="n">Regulative</span> <span class="n">Rule</span> <span class="p">]</span>
+<span class="p">[</span><span class="n">LEST</span>                               <span class="n">Rule</span> <span class="n">Label</span> <span class="o">|</span> <span class="n">Regulative</span> <span class="n">Rule</span> <span class="p">]</span>
+<span class="p">[</span><span class="n">WHERE</span>                              <span class="n">Constitutive</span> <span class="n">Rule</span>
+                                    <span class="p">[</span>   <span class="o">...</span>     <span class="p">]</span>                <span class="p">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="legalss-setup.html" class="btn btn-neutral float-left" title="Setting up the LegalSS Google Sheet" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="legalss-examples.html" class="btn btn-neutral float-right" title="Examples in L4 and the concepts and keywords introduced in each example" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Meng Weng Wong.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
