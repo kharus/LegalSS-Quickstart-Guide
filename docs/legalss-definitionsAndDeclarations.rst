@@ -21,26 +21,26 @@ These declarations and definitions are automatically exported to the programming
 
 Consider the following code
 
-.. code-block:: 
+.. code-block:: bnf
 
-    Type Declaration				::=		DECLARE				MultiTerm			    [Type Signature ]	
-					            [Has-Attribute      ]								
-					            [	...             ]								
+    Type Declaration	::=		DECLARE			MultiTerm			  [Type Signature]	
+					[Has-Attribute  ]								
+					[       ...     ]							
 																		
-    Has-Attribute				::=		HAS				MultiTerm			    [Type Signature	]	
-						    [	...	        ]
-						    [Has-Attribute	]	
+    Has-Attribute	::=		HAS			MultiTerm			  [Type Signature]	
+					[       ...     ]
+					[Has-Attribute	]	
 
 This syntax rule means you can have multiple HAS-Attributes, listed on subsequent lines. For convenience, only the first HAS keyword is necessary; subsequent lines don't need it.
 
 HAS-Attributes can nest, such that one record declaration can contain another.
 For example:
 
-.. code-block:: 
+.. code-block:: bnf
 
-    Variable Definition				::=		DEFINE				Value Term			[Type Signature	]		//	class-object instantiation				
-						                HAS				MultiTerm			[Type Signature	]							
-										                [ ... ]														
+    Variable Definition	::=	DEFINE		Value Term		[Type Signature	]	//class-object instantiation				
+				HAS		MultiTerm		[Type Signature	]							
+						[ ... ]														
 
 Variable definitions with the DEFINE keyword follow the same format as DECLARE.
 
@@ -52,9 +52,9 @@ BY and WITHIN for Temporal Constraints such as Deadlines
 
 The BY and WITHIN keywords set deadlines
 
-.. code-block:: 
+.. code-block:: bnf
 
-    Temporal Constraint				::=	(BEFORE | AFTER | BY | WITHIN | UNTIL)	Temporal Spec				
+    Temporal Constraint ::= (BEFORE | AFTER | BY | WITHIN | UNTIL) Temporal Spec				
 
 A regulative rule without a temporal constraint is incomplete. L4 substitutes "EVENTUALLY" but will issue a warning so you are conscious that a deadline is missing.
 
@@ -64,9 +64,9 @@ MUST, SHANT, and MAY for obligations and permissions
 
 Laws and contracts impose *obligations* and *prohibitions* on persons, and grant *permissions*. These ideas are central to *deontic logic*, and underlie L4's keywords MUST, SHANT, and MAY, respectively.
 
-.. code-block:: 
+.. code-block:: bnf
     
-    Deontic Keyword				::=	(MUST | MAY | SHANT)	
+    Deontic Keyword ::= (MUST | MAY | SHANT)	
 
 Within the context of a single rule, these deontic keywords specify different consequences for the satisfaction or violation of the rule.
 
@@ -76,7 +76,7 @@ FULFILLED and BREACH for consequences in L4
 
 The two fundamental consequences in L4 are FULFILLED and BREACH.
 
-.. code-block:: 
+.. code-block:: bnf
 
                     If the actor does not perform the action by the deadline            If the actor performs the action by the deadline								
         MUST		    BREACHED                                                            		    FULFILLED								
@@ -97,10 +97,10 @@ Ordinary programming languages use the IF … THEN … ELSE construct to connec
 
 L4 uses HENCE instead of THEN, and LEST instead of ELSE, to connect regulative rules, based on whether the preceding rule was satisfied.
 
-.. code-block:: 
+.. code-block:: bnf
 
-    Regulative Connector				::=	(HENCE | LEST)		
-                                                            Rule Label | Regulative Rule				
+    Regulative Connector ::=	(HENCE | LEST)		
+                            Rule Label | Regulative Rule				
 
 Individual regulative rules connect with one another to form a graph, or a flowchart, describing a workflow.
 
@@ -110,7 +110,7 @@ The Semantics of rules
 
 What are the semantics of a rule?
 
-.. code-block:: 
+.. code-block:: bnf
 
     [Attribute Constraint   ]							
     [Conditional Constraint ]							

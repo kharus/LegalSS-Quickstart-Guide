@@ -91,21 +91,21 @@
 <p>We use DEFINE to instantiate those templates with concrete values: the specific variables of a particular agreement.</p>
 <p>These declarations and definitions are automatically exported to the programming language of your choice, lessening the burden of programming downstream. Some call this “”model-driven engineering””; others, “”low-code”.</p>
 <p>Consider the following code</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Type</span> <span class="n">Declaration</span>                            <span class="p">:</span><span class="o">:=</span>             <span class="n">DECLARE</span>                         <span class="n">MultiTerm</span>                           <span class="p">[</span><span class="n">Type</span> <span class="n">Signature</span> <span class="p">]</span>
-                                                <span class="p">[</span><span class="n">Has</span><span class="o">-</span><span class="n">Attribute</span>      <span class="p">]</span>
-                                                <span class="p">[</span>   <span class="o">...</span>             <span class="p">]</span>
+<div class="highlight-bnf notranslate"><div class="highlight"><pre><span></span>Type Declaration    <span class="o">::=</span>             DECLARE                 MultiTerm                         [Type Signature]
+                                    [Has-Attribute  ]
+                                    [       ...     ]
 
-<span class="n">Has</span><span class="o">-</span><span class="n">Attribute</span>                               <span class="p">:</span><span class="o">:=</span>             <span class="n">HAS</span>                             <span class="n">MultiTerm</span>                           <span class="p">[</span><span class="n">Type</span> <span class="n">Signature</span>     <span class="p">]</span>
-                                                <span class="p">[</span>   <span class="o">...</span>             <span class="p">]</span>
-                                                <span class="p">[</span><span class="n">Has</span><span class="o">-</span><span class="n">Attribute</span>      <span class="p">]</span>
+Has-Attribute       <span class="o">::=</span>             HAS                     MultiTerm                         [Type Signature]
+                                    [       ...     ]
+                                    [Has-Attribute  ]
 </pre></div>
 </div>
 <p>This syntax rule means you can have multiple HAS-Attributes, listed on subsequent lines. For convenience, only the first HAS keyword is necessary; subsequent lines don’t need it.</p>
 <p>HAS-Attributes can nest, such that one record declaration can contain another.
 For example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Variable</span> <span class="n">Definition</span>                         <span class="p">:</span><span class="o">:=</span>             <span class="n">DEFINE</span>                          <span class="n">Value</span> <span class="n">Term</span>                      <span class="p">[</span><span class="n">Type</span> <span class="n">Signature</span> <span class="p">]</span>               <span class="o">//</span>      <span class="n">class</span><span class="o">-</span><span class="nb">object</span> <span class="n">instantiation</span>
-                                                            <span class="n">HAS</span>                             <span class="n">MultiTerm</span>                       <span class="p">[</span><span class="n">Type</span> <span class="n">Signature</span> <span class="p">]</span>
-                                                                                            <span class="p">[</span> <span class="o">...</span> <span class="p">]</span>
+<div class="highlight-bnf notranslate"><div class="highlight"><pre><span></span>Variable Definition <span class="o">::=</span>     DEFINE          Value Term              [Type Signature ]       //class-object instantiation
+                            HAS             MultiTerm               [Type Signature ]
+                                            [ ... ]
 </pre></div>
 </div>
 <p>Variable definitions with the DEFINE keyword follow the same format as DECLARE.</p>
@@ -114,7 +114,7 @@ For example:</p>
 <section id="by-and-within-for-temporal-constraints-such-as-deadlines">
 <h2>BY and WITHIN for Temporal Constraints such as Deadlines<a class="headerlink" href="#by-and-within-for-temporal-constraints-such-as-deadlines" title="Permalink to this heading"></a></h2>
 <p>The BY and WITHIN keywords set deadlines</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Temporal</span> <span class="n">Constraint</span>                         <span class="p">:</span><span class="o">:=</span>     <span class="p">(</span><span class="n">BEFORE</span> <span class="o">|</span> <span class="n">AFTER</span> <span class="o">|</span> <span class="n">BY</span> <span class="o">|</span> <span class="n">WITHIN</span> <span class="o">|</span> <span class="n">UNTIL</span><span class="p">)</span>  <span class="n">Temporal</span> <span class="n">Spec</span>
+<div class="highlight-bnf notranslate"><div class="highlight"><pre><span></span>Temporal Constraint <span class="o">::=</span> (BEFORE | AFTER | BY | WITHIN | UNTIL) Temporal Spec
 </pre></div>
 </div>
 <p>A regulative rule without a temporal constraint is incomplete. L4 substitutes “EVENTUALLY” but will issue a warning so you are conscious that a deadline is missing.</p>
@@ -122,7 +122,7 @@ For example:</p>
 <section id="must-shant-and-may-for-obligations-and-permissions">
 <h2>MUST, SHANT, and MAY for obligations and permissions<a class="headerlink" href="#must-shant-and-may-for-obligations-and-permissions" title="Permalink to this heading"></a></h2>
 <p>Laws and contracts impose <em>obligations</em> and <em>prohibitions</em> on persons, and grant <em>permissions</em>. These ideas are central to <em>deontic logic</em>, and underlie L4’s keywords MUST, SHANT, and MAY, respectively.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Deontic</span> <span class="n">Keyword</span>                             <span class="p">:</span><span class="o">:=</span>     <span class="p">(</span><span class="n">MUST</span> <span class="o">|</span> <span class="n">MAY</span> <span class="o">|</span> <span class="n">SHANT</span><span class="p">)</span>
+<div class="highlight-bnf notranslate"><div class="highlight"><pre><span></span>Deontic Keyword <span class="o">::=</span> (MUST | MAY | SHANT)
 </pre></div>
 </div>
 <p>Within the context of a single rule, these deontic keywords specify different consequences for the satisfaction or violation of the rule.</p>
@@ -130,10 +130,10 @@ For example:</p>
 <section id="fulfilled-and-breach-for-consequences-in-l4">
 <h2>FULFILLED and BREACH for consequences in L4<a class="headerlink" href="#fulfilled-and-breach-for-consequences-in-l4" title="Permalink to this heading"></a></h2>
 <p>The two fundamental consequences in L4 are FULFILLED and BREACH.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>            <span class="n">If</span> <span class="n">the</span> <span class="n">actor</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">perform</span> <span class="n">the</span> <span class="n">action</span> <span class="n">by</span> <span class="n">the</span> <span class="n">deadline</span>            <span class="n">If</span> <span class="n">the</span> <span class="n">actor</span> <span class="n">performs</span> <span class="n">the</span> <span class="n">action</span> <span class="n">by</span> <span class="n">the</span> <span class="n">deadline</span>
-<span class="n">MUST</span>                <span class="n">BREACHED</span>                                                                                <span class="n">FULFILLED</span>
-<span class="n">SHANT</span>               <span class="n">FULFILLED</span>                                                                               <span class="n">BREACHED</span>
-<span class="n">MAY</span>                 <span class="n">FULFILLED</span>                                                                               <span class="n">FULFILLED</span>
+<div class="highlight-bnf notranslate"><div class="highlight"><pre><span></span>            If the actor does not perform the action by the deadline            If the actor performs the action by the deadline
+MUST                BREACHED                                                                                FULFILLED
+SHANT               FULFILLED                                                                               BREACHED
+MAY                 FULFILLED                                                                               FULFILLED
 </pre></div>
 </div>
 <p>We observe that a MAY rule is permissive: if you do it, fine! If you don’t, fine!</p>
@@ -144,8 +144,8 @@ For example:</p>
 <h2>HENCE and LEST for regulative rules and connecting blocks of code<a class="headerlink" href="#hence-and-lest-for-regulative-rules-and-connecting-blocks-of-code" title="Permalink to this heading"></a></h2>
 <p>Ordinary programming languages use the IF … THEN … ELSE construct to connect blocks of code, based on whether the conditions in the IF were met.</p>
 <p>L4 uses HENCE instead of THEN, and LEST instead of ELSE, to connect regulative rules, based on whether the preceding rule was satisfied.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Regulative</span> <span class="n">Connector</span>                                <span class="p">:</span><span class="o">:=</span>     <span class="p">(</span><span class="n">HENCE</span> <span class="o">|</span> <span class="n">LEST</span><span class="p">)</span>
-                                                        <span class="n">Rule</span> <span class="n">Label</span> <span class="o">|</span> <span class="n">Regulative</span> <span class="n">Rule</span>
+<div class="highlight-bnf notranslate"><div class="highlight"><pre><span></span>Regulative Connector <span class="o">::=</span>    (HENCE | LEST)
+                        Rule Label | Regulative Rule
 </pre></div>
 </div>
 <p>Individual regulative rules connect with one another to form a graph, or a flowchart, describing a workflow.</p>
@@ -153,13 +153,13 @@ For example:</p>
 <section id="the-semantics-of-rules">
 <h2>The Semantics of rules<a class="headerlink" href="#the-semantics-of-rules" title="Permalink to this heading"></a></h2>
 <p>What are the semantics of a rule?</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Attribute</span> <span class="n">Constraint</span>   <span class="p">]</span>
-<span class="p">[</span><span class="n">Conditional</span> <span class="n">Constraint</span> <span class="p">]</span>
-<span class="p">[</span><span class="n">Upon</span> <span class="n">Trigger</span>           <span class="p">]</span>
-<span class="p">[</span><span class="n">HENCE</span>                              <span class="n">Rule</span> <span class="n">Label</span> <span class="o">|</span> <span class="n">Regulative</span> <span class="n">Rule</span> <span class="p">]</span>
-<span class="p">[</span><span class="n">LEST</span>                               <span class="n">Rule</span> <span class="n">Label</span> <span class="o">|</span> <span class="n">Regulative</span> <span class="n">Rule</span> <span class="p">]</span>
-<span class="p">[</span><span class="n">WHERE</span>                              <span class="n">Constitutive</span> <span class="n">Rule</span>
-                                    <span class="p">[</span>   <span class="o">...</span>     <span class="p">]</span>                <span class="p">]</span>
+<div class="highlight-bnf notranslate"><div class="highlight"><pre><span></span>[Attribute Constraint   ]
+[Conditional Constraint ]
+[Upon Trigger           ]
+[HENCE                              Rule Label | Regulative Rule ]
+[LEST                               Rule Label | Regulative Rule ]
+[WHERE                              Constitutive Rule
+                                    [   ...     ]                ]
 </pre></div>
 </div>
 </section>
